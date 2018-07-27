@@ -6,6 +6,8 @@ const mongoose = require("mongoose");
 
 
 // Create the db and connect
+lst mongoUri = process.env.MONGODB_URI || "mongodb://localhost:27017/grocery_app_dev";
+mongoose.connect(mongoUri);
 const url = "mongodb://localhost:27017/gladiator";
 mongoose.connect(url, { useNewUrlParser: true });
 

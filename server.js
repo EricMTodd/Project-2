@@ -1,7 +1,7 @@
 console.log("server is running...");
 
 
-// Required npm modules
+// Required npm modules and other variables
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
@@ -9,6 +9,7 @@ const methodOverride = require("method-override");
 const session = require("express-session");
 const MongoDBStore = require("connect-mongodb-session")(session);
 const Slave = require("./models/slave");
+const port = process.env.PORT || 3030;
 
 
 // Required database
@@ -101,3 +102,6 @@ app.get("/", async (req, res) => {
 app.listen(3030, () => {
 	console.log("server.js is listening on port 3030.");
 });
+
+app.listen(port);
+console.log(`Server is running on port ${port}`);
