@@ -62,6 +62,8 @@ mongoUri = process.env.MONGODB_URI || "mongodb://localhost:27017/gladiator",
 store.on('connected', function() {
   store.client; // The underlying MongoClient object from the MongoDB driver
 });
+
+mongoose.connect(mongoUri);
  
 // Catch errors
 store.on('error', function(error) {
