@@ -55,8 +55,7 @@ app.use((req, res, next) => {
 
 // This allows the user to remain logged in after restarting the server.
 const store = new MongoDBStore({
-const mongoUri = process.env.MONGODB_URI || "mongodb://localhost:27017/grocery_app_dev",
-mongoose.connect(mongoUri);
+mongoUri = process.env.MONGODB_URI || "mongodb://localhost:27017/gladiator",
   collection: 'mySessions'
 });
  
@@ -100,9 +99,9 @@ app.get("/", async (req, res) => {
 
 
 // Listening for server
-app.listen(3030, () => {
-	console.log("server.js is listening on port 3030.");
-});
+// app.listen(3030, () => {
+// 	console.log("server.js is listening on port 3030.");
+// });
 
 app.listen(port);
 console.log(`Server is running on port ${port}`);
